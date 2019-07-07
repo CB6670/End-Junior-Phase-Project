@@ -1,0 +1,19 @@
+{
+  "name": "End-Junior-Phase-Project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "sequelize": "^5.9.4",
+    "webpack": "^4.35.2"
+  }
+}
