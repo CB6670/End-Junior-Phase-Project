@@ -4,7 +4,7 @@ const {syncAndSeed} = require('../database/db');
 const path = require('path');
 const app = express();
 
-const port = process.env.URL || 3000;
+const port = process.env.PORT || 3000;
 
 syncAndSeed();
 
