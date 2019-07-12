@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:dev": "nodemon database/db.js --watch",
+    "server:dev": "nodemon server --ignore dist --ignore src",
     "build:dev": "npm run webpack -- --watch --mode=development",
     "webpack":"webpack",
-    "postinstall": "npm run webpack"
+    "postinstall": "npm run webpack",
+    "start:dev": "npm run build:dev & npm run server:dev"
   },
   "keywords": [],
   "author": "",
