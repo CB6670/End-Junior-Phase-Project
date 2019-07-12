@@ -2,6 +2,8 @@ const ADD_STUDENT = 'ADD_STUDENT';
 
 const CHANGE_SCHOOL = "CHANGE_SCHOOL";
 
+const DESTROY_STUDENT = "DESTROY_STUDENT";
+
 module.exports = {
     ADD_STUDENT,
     CHANGE_SCHOOL

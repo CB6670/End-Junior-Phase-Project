@@ -8,10 +8,10 @@ const port = process.env.PORT || 3000;
 
 syncAndSeed();
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use('/',router);
-app.use(express.static(path.join(__dirname,'../dist')));
+app.use('/dist', express.static(path.join(__dirname, '../dist')));
 
 app.listen(port, () => (console.log(`listening in on port ${port}`)));

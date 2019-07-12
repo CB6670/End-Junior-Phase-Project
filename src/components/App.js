@@ -11,8 +11,17 @@ class App extends Component{
            lastName:'',
            email:'',
            GPA:0,
-           school: 'Not Enrolled'
+           school: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    async handleSubmit(ev){
+        const firstName = ev.target.firstName;
+        const lastName = ev.target.lastName;
+        const email = ev.target.lastName;
+        const GPA = ev.target.GPA;
+        const school = ev.target.school
     }
 
     render(){
@@ -22,7 +31,7 @@ class App extends Component{
             <Link to= '/schools'>Schools</Link>
             <Link to= '/students'>Students</Link>
             {}
-            <form onSubmit = {handleSubmit}>
+            <form >
                 <label>
                     first Name:
                     <input type = 'text' name = 'firstName'/>
@@ -42,7 +51,7 @@ class App extends Component{
                 <select value={this.state.school} onChange={this.handleSelectChange}>
                     <option value="Harvard">Harvard</option>
                     <option value="Yale">Yale</option>
-                    <option selected value="Duke">Duke</option>
+                    <option selected value="Not Enrolled">Not Enrolled</option>
                     <option value="UCLA">UCLA</option>
                 </select>
             </form>

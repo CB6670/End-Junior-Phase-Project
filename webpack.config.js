@@ -6,13 +6,6 @@ module.exports = {
     '@babel/polyfill', // enables async-await
     './src/index.js'
   ],
-  output: {
-    path: __dirname,
-    filename: './public/bundle.js'
-  },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
   devtool: 'source-map',
   watchOptions: {
     ignored: /node_modules/

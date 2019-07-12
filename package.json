@@ -6,7 +6,7 @@
   "scripts": {
     "server:dev": "nodemon server --ignore dist --ignore src",
     "build:dev": "npm run webpack -- --watch --mode=development",
-    "webpack":"webpack",
+    "webpack": "webpack",
     "postinstall": "npm run webpack",
     "start:dev": "npm run build:dev & npm run server:dev"
   },
@@ -24,11 +24,15 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "sequelize": "^5.9.4",
     "webpack": "^4.35.2"
   },
-  "babel":{
-    "presets":["@babel/preset-react","@babel/preset-env"]
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
