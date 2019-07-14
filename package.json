@@ -30,7 +30,11 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-react",
+      ["@babel/preset-react",{
+        "targets":{
+          "node":10
+        }
+      }],
       "@babel/preset-env"
     ]
   },

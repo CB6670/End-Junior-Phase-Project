@@ -1,16 +1,25 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import axios from "axios";
+import store from "../store/store";
 
-const Schools = async() => {
-    const res = await axios.get("/api/schools");
-    const schools = res.data;
-    return(
-        <ul>
+class Schools extends Component{
+    constructor(props){
+        super(props);
+        this.state = store.getState();
+    }
+
+    render(){
+        const {schools} = this.state;
+        return (
             {
-                schools.map(school => <li key = {school.id}>{school.name}</li>)
+                schools.map(school => {
+                    <div>
+                        <h2>{school.name}</h2>
+                        <a href = school.imageURL />
+                        <p>Student Count: {schoolsMap.length}</p>
+                    </div>
+                })
             }
-        </ul>
-    )
+        )
+    }
 }
-
-export default Schools;
