@@ -40350,6 +40350,19 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/redux-logger/dist/redux-logger.js":
+/*!********************************************************!*\
+  !*** ./node_modules/redux-logger/dist/redux-logger.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {!function(e,t){ true?t(exports):undefined}(this,function(e){"use strict";function t(e,t){e.super_=t,e.prototype=Object.create(t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}})}function r(e,t){Object.defineProperty(this,"kind",{value:e,enumerable:!0}),t&&t.length&&Object.defineProperty(this,"path",{value:t,enumerable:!0})}function n(e,t,r){n.super_.call(this,"E",e),Object.defineProperty(this,"lhs",{value:t,enumerable:!0}),Object.defineProperty(this,"rhs",{value:r,enumerable:!0})}function o(e,t){o.super_.call(this,"N",e),Object.defineProperty(this,"rhs",{value:t,enumerable:!0})}function i(e,t){i.super_.call(this,"D",e),Object.defineProperty(this,"lhs",{value:t,enumerable:!0})}function a(e,t,r){a.super_.call(this,"A",e),Object.defineProperty(this,"index",{value:t,enumerable:!0}),Object.defineProperty(this,"item",{value:r,enumerable:!0})}function f(e,t,r){var n=e.slice((r||t)+1||e.length);return e.length=t<0?e.length+t:t,e.push.apply(e,n),e}function u(e){var t="undefined"==typeof e?"undefined":N(e);return"object"!==t?t:e===Math?"math":null===e?"null":Array.isArray(e)?"array":"[object Date]"===Object.prototype.toString.call(e)?"date":"function"==typeof e.toString&&/^\/.*\//.test(e.toString())?"regexp":"object"}function l(e,t,r,c,s,d,p){s=s||[],p=p||[];var g=s.slice(0);if("undefined"!=typeof d){if(c){if("function"==typeof c&&c(g,d))return;if("object"===("undefined"==typeof c?"undefined":N(c))){if(c.prefilter&&c.prefilter(g,d))return;if(c.normalize){var h=c.normalize(g,d,e,t);h&&(e=h[0],t=h[1])}}}g.push(d)}"regexp"===u(e)&&"regexp"===u(t)&&(e=e.toString(),t=t.toString());var y="undefined"==typeof e?"undefined":N(e),v="undefined"==typeof t?"undefined":N(t),b="undefined"!==y||p&&p[p.length-1].lhs&&p[p.length-1].lhs.hasOwnProperty(d),m="undefined"!==v||p&&p[p.length-1].rhs&&p[p.length-1].rhs.hasOwnProperty(d);if(!b&&m)r(new o(g,t));else if(!m&&b)r(new i(g,e));else if(u(e)!==u(t))r(new n(g,e,t));else if("date"===u(e)&&e-t!==0)r(new n(g,e,t));else if("object"===y&&null!==e&&null!==t)if(p.filter(function(t){return t.lhs===e}).length)e!==t&&r(new n(g,e,t));else{if(p.push({lhs:e,rhs:t}),Array.isArray(e)){var w;e.length;for(w=0;w<e.length;w++)w>=t.length?r(new a(g,w,new i(void 0,e[w]))):l(e[w],t[w],r,c,g,w,p);for(;w<t.length;)r(new a(g,w,new o(void 0,t[w++])))}else{var x=Object.keys(e),S=Object.keys(t);x.forEach(function(n,o){var i=S.indexOf(n);i>=0?(l(e[n],t[n],r,c,g,n,p),S=f(S,i)):l(e[n],void 0,r,c,g,n,p)}),S.forEach(function(e){l(void 0,t[e],r,c,g,e,p)})}p.length=p.length-1}else e!==t&&("number"===y&&isNaN(e)&&isNaN(t)||r(new n(g,e,t)))}function c(e,t,r,n){return n=n||[],l(e,t,function(e){e&&n.push(e)},r),n.length?n:void 0}function s(e,t,r){if(r.path&&r.path.length){var n,o=e[t],i=r.path.length-1;for(n=0;n<i;n++)o=o[r.path[n]];switch(r.kind){case"A":s(o[r.path[n]],r.index,r.item);break;case"D":delete o[r.path[n]];break;case"E":case"N":o[r.path[n]]=r.rhs}}else switch(r.kind){case"A":s(e[t],r.index,r.item);break;case"D":e=f(e,t);break;case"E":case"N":e[t]=r.rhs}return e}function d(e,t,r){if(e&&t&&r&&r.kind){for(var n=e,o=-1,i=r.path?r.path.length-1:0;++o<i;)"undefined"==typeof n[r.path[o]]&&(n[r.path[o]]="number"==typeof r.path[o]?[]:{}),n=n[r.path[o]];switch(r.kind){case"A":s(r.path?n[r.path[o]]:n,r.index,r.item);break;case"D":delete n[r.path[o]];break;case"E":case"N":n[r.path[o]]=r.rhs}}}function p(e,t,r){if(r.path&&r.path.length){var n,o=e[t],i=r.path.length-1;for(n=0;n<i;n++)o=o[r.path[n]];switch(r.kind){case"A":p(o[r.path[n]],r.index,r.item);break;case"D":o[r.path[n]]=r.lhs;break;case"E":o[r.path[n]]=r.lhs;break;case"N":delete o[r.path[n]]}}else switch(r.kind){case"A":p(e[t],r.index,r.item);break;case"D":e[t]=r.lhs;break;case"E":e[t]=r.lhs;break;case"N":e=f(e,t)}return e}function g(e,t,r){if(e&&t&&r&&r.kind){var n,o,i=e;for(o=r.path.length-1,n=0;n<o;n++)"undefined"==typeof i[r.path[n]]&&(i[r.path[n]]={}),i=i[r.path[n]];switch(r.kind){case"A":p(i[r.path[n]],r.index,r.item);break;case"D":i[r.path[n]]=r.lhs;break;case"E":i[r.path[n]]=r.lhs;break;case"N":delete i[r.path[n]]}}}function h(e,t,r){if(e&&t){var n=function(n){r&&!r(e,t,n)||d(e,t,n)};l(e,t,n)}}function y(e){return"color: "+F[e].color+"; font-weight: bold"}function v(e){var t=e.kind,r=e.path,n=e.lhs,o=e.rhs,i=e.index,a=e.item;switch(t){case"E":return[r.join("."),n,"→",o];case"N":return[r.join("."),o];case"D":return[r.join(".")];case"A":return[r.join(".")+"["+i+"]",a];default:return[]}}function b(e,t,r,n){var o=c(e,t);try{n?r.groupCollapsed("diff"):r.group("diff")}catch(e){r.log("diff")}o?o.forEach(function(e){var t=e.kind,n=v(e);r.log.apply(r,["%c "+F[t].text,y(t)].concat(P(n)))}):r.log("—— no diff ——");try{r.groupEnd()}catch(e){r.log("—— diff end —— ")}}function m(e,t,r,n){switch("undefined"==typeof e?"undefined":N(e)){case"object":return"function"==typeof e[n]?e[n].apply(e,P(r)):e[n];case"function":return e(t);default:return e}}function w(e){var t=e.timestamp,r=e.duration;return function(e,n,o){var i=["action"];return i.push("%c"+String(e.type)),t&&i.push("%c@ "+n),r&&i.push("%c(in "+o.toFixed(2)+" ms)"),i.join(" ")}}function x(e,t){var r=t.logger,n=t.actionTransformer,o=t.titleFormatter,i=void 0===o?w(t):o,a=t.collapsed,f=t.colors,u=t.level,l=t.diff,c="undefined"==typeof t.titleFormatter;e.forEach(function(o,s){var d=o.started,p=o.startedTime,g=o.action,h=o.prevState,y=o.error,v=o.took,w=o.nextState,x=e[s+1];x&&(w=x.prevState,v=x.started-d);var S=n(g),k="function"==typeof a?a(function(){return w},g,o):a,j=D(p),E=f.title?"color: "+f.title(S)+";":"",A=["color: gray; font-weight: lighter;"];A.push(E),t.timestamp&&A.push("color: gray; font-weight: lighter;"),t.duration&&A.push("color: gray; font-weight: lighter;");var O=i(S,j,v);try{k?f.title&&c?r.groupCollapsed.apply(r,["%c "+O].concat(A)):r.groupCollapsed(O):f.title&&c?r.group.apply(r,["%c "+O].concat(A)):r.group(O)}catch(e){r.log(O)}var N=m(u,S,[h],"prevState"),P=m(u,S,[S],"action"),C=m(u,S,[y,h],"error"),F=m(u,S,[w],"nextState");if(N)if(f.prevState){var L="color: "+f.prevState(h)+"; font-weight: bold";r[N]("%c prev state",L,h)}else r[N]("prev state",h);if(P)if(f.action){var T="color: "+f.action(S)+"; font-weight: bold";r[P]("%c action    ",T,S)}else r[P]("action    ",S);if(y&&C)if(f.error){var M="color: "+f.error(y,h)+"; font-weight: bold;";r[C]("%c error     ",M,y)}else r[C]("error     ",y);if(F)if(f.nextState){var _="color: "+f.nextState(w)+"; font-weight: bold";r[F]("%c next state",_,w)}else r[F]("next state",w);l&&b(h,w,r,k);try{r.groupEnd()}catch(e){r.log("—— log end ——")}})}function S(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=Object.assign({},L,e),r=t.logger,n=t.stateTransformer,o=t.errorTransformer,i=t.predicate,a=t.logErrors,f=t.diffPredicate;if("undefined"==typeof r)return function(){return function(e){return function(t){return e(t)}}};if(e.getState&&e.dispatch)return console.error("[redux-logger] redux-logger not installed. Make sure to pass logger instance as middleware:\n// Logger with default options\nimport { logger } from 'redux-logger'\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n// Or you can create your own logger with custom options http://bit.ly/redux-logger-options\nimport createLogger from 'redux-logger'\nconst logger = createLogger({\n  // ...options\n});\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n"),function(){return function(e){return function(t){return e(t)}}};var u=[];return function(e){var r=e.getState;return function(e){return function(l){if("function"==typeof i&&!i(r,l))return e(l);var c={};u.push(c),c.started=O.now(),c.startedTime=new Date,c.prevState=n(r()),c.action=l;var s=void 0;if(a)try{s=e(l)}catch(e){c.error=o(e)}else s=e(l);c.took=O.now()-c.started,c.nextState=n(r());var d=t.diff&&"function"==typeof f?f(r,l):t.diff;if(x(u,Object.assign({},t,{diff:d})),u.length=0,c.error)throw c.error;return s}}}}var k,j,E=function(e,t){return new Array(t+1).join(e)},A=function(e,t){return E("0",t-e.toString().length)+e},D=function(e){return A(e.getHours(),2)+":"+A(e.getMinutes(),2)+":"+A(e.getSeconds(),2)+"."+A(e.getMilliseconds(),3)},O="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance:Date,N="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},P=function(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)},C=[];k="object"===("undefined"==typeof global?"undefined":N(global))&&global?global:"undefined"!=typeof window?window:{},j=k.DeepDiff,j&&C.push(function(){"undefined"!=typeof j&&k.DeepDiff===c&&(k.DeepDiff=j,j=void 0)}),t(n,r),t(o,r),t(i,r),t(a,r),Object.defineProperties(c,{diff:{value:c,enumerable:!0},observableDiff:{value:l,enumerable:!0},applyDiff:{value:h,enumerable:!0},applyChange:{value:d,enumerable:!0},revertChange:{value:g,enumerable:!0},isConflict:{value:function(){return"undefined"!=typeof j},enumerable:!0},noConflict:{value:function(){return C&&(C.forEach(function(e){e()}),C=null),c},enumerable:!0}});var F={E:{color:"#2196F3",text:"CHANGED:"},N:{color:"#4CAF50",text:"ADDED:"},D:{color:"#F44336",text:"DELETED:"},A:{color:"#2196F3",text:"ARRAY:"}},L={level:"log",logger:console,logErrors:!0,collapsed:void 0,predicate:void 0,duration:!1,timestamp:!0,stateTransformer:function(e){return e},actionTransformer:function(e){return e},errorTransformer:function(e){return e},colors:{title:function(){return"inherit"},prevState:function(){return"#9E9E9E"},action:function(){return"#03A9F4"},nextState:function(){return"#4CAF50"},error:function(){return"#F20404"}},diff:!1,diffPredicate:void 0,transformer:void 0},T=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.dispatch,r=e.getState;return"function"==typeof t||"function"==typeof r?S()({dispatch:t,getState:r}):void console.error("\n[redux-logger v3] BREAKING CHANGE\n[redux-logger v3] Since 3.0.0 redux-logger exports by default logger with default settings.\n[redux-logger v3] Change\n[redux-logger v3] import createLogger from 'redux-logger'\n[redux-logger v3] to\n[redux-logger v3] import { createLogger } from 'redux-logger'\n")};e.defaults=L,e.createLogger=S,e.logger=T,e.default=T,Object.defineProperty(e,"__esModule",{value:!0})});
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "./node_modules/redux-thunk/es/index.js":
 /*!**********************************************!*\
   !*** ./node_modules/redux-thunk/es/index.js ***!
@@ -43294,6 +43307,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/store */ "./src/store/store.js");
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Form */ "./src/components/Form.js");
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Home */ "./src/components/Home.js");
+/* harmony import */ var _schools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./schools */ "./src/components/schools.js");
+/* harmony import */ var _students__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./students */ "./src/components/students.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
@@ -43301,23 +43333,76 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var App = function App(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/"
-  }, "Acme Schools"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/schools"
-  }, "Schools"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/students"
-  }, "Students"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    component: _Form__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
-    path: "/",
-    component: _Home__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }));
+
+
+
+var App =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(App, _Component);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+  }
+
+  _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.loadData();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          schools = _this$props.schools,
+          students = _this$props.students;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, "Acme Schools"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/schools"
+      }, "Schools"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/students"
+      }, "Students"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        component: _Form__WEBPACK_IMPORTED_MODULE_4__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: "/",
+        component: _Home__WEBPACK_IMPORTED_MODULE_5__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: "/schools",
+        component: _schools__WEBPACK_IMPORTED_MODULE_6__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/students",
+        component: _students__WEBPACK_IMPORTED_MODULE_7__["default"]
+      }));
+    }
+  }]);
+
+  return App;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var schools = _ref.schools,
+      students = _ref.students;
+  return {
+    schools: schools,
+    students: students
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])()(App));
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    loadData: function loadData() {
+      dispatch(Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["fetchSchools"])());
+      dispatch(Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["fetchStudents"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(App));
 
 /***/ }),
 
@@ -43330,13 +43415,17 @@ var App = function App(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Form; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/store */ "./src/store/store.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -43357,6 +43446,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Form =
 /*#__PURE__*/
 function (_Component) {
@@ -43373,7 +43463,8 @@ function (_Component) {
       lastName: '',
       email: '',
       GPA: 0,
-      school: ''
+      school: 'Harvard',
+      loading: true
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
@@ -43381,71 +43472,128 @@ function (_Component) {
   }
 
   _createClass(Form, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return this.props.loadData();
+
+              case 2:
+                //console.log("data", await this.props.loadData());
+                this.setState({
+                  loading: false
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
     key: "handleChange",
     value: function handleChange(ev) {
-      var target = ev.target;
-      var value = target.value;
-      var name = target.name;
-      this.setState(_defineProperty({}, name, value)); //console.log(this.state);
+      this.setState(_defineProperty({}, ev.target.name, ev.target.value));
     }
   }, {
     key: "handleSubmit",
-    value: function handleSubmit(ev) {
-      ev.preventDefault();
-      var firstName = ev.target.firstName;
-      var lastName = ev.target.lastName;
-      var email = ev.target.lastName;
-      var GPA = ev.target.GPA;
-      var school = this.state.store.schools.filter(function (_school) {
-        if (school.name === ev.target.school) {
-          return _school;
-        }
-      });
-      var schoolId = school.id; //console.log(this.state.store);
+    value: function () {
+      var _handleSubmit = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(ev) {
+        var dataObj;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                ev.preventDefault();
+                dataObj = {};
+                dataObj.firstName = this.state.firstName;
+                dataObj.lastName = this.state.lastName;
+                dataObj.email = this.state.email;
+                dataObj.GPA = this.state.GPA;
+                _context2.next = 8;
+                return this.props.addStudentDispatch(dataObj);
 
-      _store_store__WEBPACK_IMPORTED_MODULE_1__["default"].dispatch(Object(_store_store__WEBPACK_IMPORTED_MODULE_1__["addStudent"])(firstName, lastName, email, GPA, schoolId));
-      this.setState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        GPA: 0,
-        school: ''
-      });
-    }
+              case 8:
+                this.setState({
+                  firstName: '',
+                  lastName: '',
+                  email: '',
+                  GPA: 0,
+                  school: "Harvard"
+                });
+
+              case 9:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function handleSubmit(_x) {
+        return _handleSubmit.apply(this, arguments);
+      }
+
+      return handleSubmit;
+    }()
   }, {
     key: "render",
     value: function render() {
+      if (this.state.loading) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      }
+
+      var _this$props = this.props,
+          schools = _this$props.schools,
+          students = _this$props.students;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "first Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         name: "firstName",
-        onChange: this.handleChange
+        onChange: this.handleChange,
+        value: this.state.firstName
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "last Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         name: "lastName",
-        onChange: this.handleChange
+        onChange: this.handleChange,
+        value: this.state.lastName
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "email",
         name: "email",
-        onChange: this.handleChange
+        onChange: this.handleChange,
+        value: this.state.email
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "GPA:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "number",
         name: "GPA",
-        onChange: this.handleChange
+        onChange: this.handleChange,
+        value: this.state.GPA
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        value: this.state.school,
+        value: this.state.value,
         onChange: this.handleChange,
         name: "school"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        defaultValue: "Not Enrolled"
-      }, "Not Enrolled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Harvard"
-      }, "Harvard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Yale"
-      }, "Yale"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "UCLA"
-      }, "UCLA")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, schools.schoolsList.map(function (school) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          key: school.id,
+          value: school.id
+        }, school.name);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Submit"
       }));
@@ -43455,7 +43603,27 @@ function (_Component) {
   return Form;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
+var mapStateToProps = function mapStateToProps(_ref) {
+  var schools = _ref.schools,
+      students = _ref.students;
+  return {
+    schools: schools,
+    students: students
+  };
+};
 
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    loadData: function loadData() {
+      return dispatch(Object(_store_store__WEBPACK_IMPORTED_MODULE_1__["fetchSchools"])());
+    },
+    addStudentDispatch: function addStudentDispatch(obj) {
+      return dispatch(Object(_store_store__WEBPACK_IMPORTED_MODULE_1__["addStudent"])(obj));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Form));
 
 /***/ }),
 
@@ -43472,7 +43640,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var Home = function Home() {
+var Home = function Home(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " Welcome to the Home Page!");
 };
 
@@ -43480,11 +43648,304 @@ var Home = function Home() {
 
 /***/ }),
 
+/***/ "./src/components/schools.js":
+/*!***********************************!*\
+  !*** ./src/components/schools.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/store */ "./src/store/store.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var Schools =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Schools, _Component);
+
+  function Schools() {
+    _classCallCheck(this, Schools);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Schools).apply(this, arguments));
+  }
+
+  _createClass(Schools, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.loadData();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var schools = this.props.schools;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, schools.schoolsList.map(function (school) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: school.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+          to: "/schools/".concat(school.id)
+        }, school.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: school.imageURL
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Student Count: ", school.studentCount));
+      }));
+    }
+  }]);
+
+  return Schools;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var schools = _ref.schools,
+      students = _ref.students;
+  return {
+    schools: schools,
+    students: students
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    loadData: function loadData() {
+      dispatch(Object(_store_store__WEBPACK_IMPORTED_MODULE_1__["fetchSchools"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Schools));
+
+/***/ }),
+
+/***/ "./src/components/students.js":
+/*!************************************!*\
+  !*** ./src/components/students.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/store */ "./src/store/store.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../index */ "./src/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+var Student =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Student, _Component);
+
+  function Student(props) {
+    var _this;
+
+    _classCallCheck(this, Student);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Student).call(this, props));
+    _this.state = {
+      value: '',
+      loading: true,
+      selectedSchool: ''
+    };
+    return _this;
+  }
+
+  _createClass(Student, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return this.props.loadData();
+
+              case 2:
+                _context.t0 = console;
+                _context.next = 5;
+                return this.props.loadData;
+
+              case 5:
+                _context.t1 = _context.sent;
+
+                _context.t0.log.call(_context.t0, "students", _context.t1);
+
+                this.setState({
+                  loading: false
+                });
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "componentDidUpdate",
+    value: function () {
+      var _componentDidUpdate = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(prevProps) {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                console.log("prevProps", prevProps);
+                console.log("props", this.props);
+
+                if (prevProps.students.studentsList !== this.props.students.studentsList) {}
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function componentDidUpdate(_x) {
+        return _componentDidUpdate.apply(this, arguments);
+      }
+
+      return componentDidUpdate;
+    }()
+  }, {
+    key: "handleChange",
+    value: function handleChange(ev) {
+      console.log("etv", ev.target.value);
+      this.props.changeStudent(ev.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      if (this.state.loading) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ");
+      }
+
+      var _this$props = this.props,
+          students = _this$props.students,
+          schools = _this$props.schools;
+      return students.studentsList.map(function (student) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: student.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+          to: "/students/".concat(student.id)
+        }, student.firstName, " ", student.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          onSubmit: _this2.handleSubmit
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+          value: _this2.state.selectedSchool,
+          onChange: _this2.handleChange
+        }, schools.schoolsList.map(function (school) {
+          if (school.id === student.schoolId) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+              key: school.id
+            }, school.name);
+          }
+
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            key: school.id,
+            value: school.id
+          }, school.name);
+        }))));
+      });
+    }
+  }]);
+
+  return Student;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var schools = _ref.schools,
+      students = _ref.students;
+  return {
+    schools: schools,
+    students: students
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    loadData: function loadData() {
+      dispatch(Object(_store_store__WEBPACK_IMPORTED_MODULE_1__["fetchStudents"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["connect"])(mapStateToProps, mapDispatchToProps)(Student));
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43508,22 +43969,46 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
   store: _store_store__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_4__["default"], null))), root);
 
+var mapper = function mapper(_ref) {
+  var schools = _ref.schools,
+      students = _ref.students;
+  var schoolsMap = students.reduce(function (acc, student) {
+    if (!acc[student.schoolId]) {
+      acc[student.schoolId] = [];
+    }
+
+    acc[student.schoolId].push(student);
+    return acc;
+  }, {});
+  return {
+    schools: schools,
+    schoolsMap: schoolsMap
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (mapper);
+
 /***/ }),
 
 /***/ "./src/store/store.js":
 /*!****************************!*\
   !*** ./src/store/store.js ***!
   \****************************/
-/*! exports provided: addStudent, default */
+/*! exports provided: addStudent, fetchStudents, fetchSchools, changeStudent, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addStudent", function() { return addStudent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchStudents", function() { return fetchStudents; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSchools", function() { return fetchSchools; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeStudent", function() { return changeStudent; });
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
+/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_3__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -43532,57 +44017,88 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { keys.push.apply(keys, Object.getOwnPropertySymbols(object)); } if (enumerableOnly) keys = keys.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
+
  // actions
 
 var ADD_STUDENT = 'ADD_STUDENT';
-var CHANGE_SCHOOL = "CHANGE_SCHOOL";
-var DESTROY_STUDENT = "DESTROY_STUDENT"; //action creators
+var CHANGE_STUDENT = "CHANGE_STUDENT";
+var DESTROY_STUDENT = "DESTROY_STUDENT";
+var FETCH_SCHOOLS = "FETCH_SCHOOLS";
+var FETCH_STUDENTS = "FETCH_STUDENTS"; //action creators
 
 var _addStudent = function _addStudent(student) {
   return {
     type: ADD_STUDENT,
     student: student
   };
+};
+
+var _fetchSchools = function _fetchSchools(schools) {
+  return {
+    type: FETCH_SCHOOLS,
+    schools: schools
+  };
+};
+
+var _fetchStudents = function _fetchStudents(students) {
+  return {
+    type: FETCH_STUDENTS,
+    students: students
+  };
+};
+
+var _changeStudent = function _changeStudent(schoolId) {
+  return {
+    type: CHANGE_STUDENT,
+    schoolId: schoolId
+  };
 }; // thunks
 
 
-var addStudent = function addStudent(firstName, lastName, email, GPA, schoolId) {
+var addStudent = function addStudent(dataObj) {
   return (
     /*#__PURE__*/
     function () {
       var _ref = _asyncToGenerator(
       /*#__PURE__*/
       regeneratorRuntime.mark(function _callee(dispatch) {
-        var studentObj, res;
+        var res;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                studentObj = {};
-                studentObj.firstName = firstName;
-                studentObj.lastName = lastName;
-                studentObj.email = email;
-                studentObj.GPA = GPA;
-                studentObj.schoolId = schoolId;
-                _context.next = 8;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/students', studentObj);
+                _context.prev = 0;
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/students', dataObj);
 
-              case 8:
+              case 3:
                 res = _context.sent;
+                console.log("addThunk");
                 return _context.abrupt("return", dispatch(_addStudent(res.data)));
 
-              case 10:
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+                console.error(_context.t0);
+
+              case 11:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[0, 8]]);
       }));
 
       return function (_x) {
@@ -43590,26 +44106,165 @@ var addStudent = function addStudent(firstName, lastName, email, GPA, schoolId) 
       };
     }()
   );
+};
+var fetchStudents = function fetchStudents() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref2 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(dispatch) {
+        var res;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/students');
+
+              case 3:
+                res = _context2.sent;
+                return _context2.abrupt("return", dispatch(_fetchStudents(res.data)));
+
+              case 7:
+                _context2.prev = 7;
+                _context2.t0 = _context2["catch"](0);
+                console.error(_context2.t0);
+
+              case 10:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 7]]);
+      }));
+
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }()
+  );
+};
+var fetchSchools = function fetchSchools() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref3 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee3(dispatch) {
+        var res;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                _context3.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/schools');
+
+              case 3:
+                res = _context3.sent;
+                console.log("res", res);
+                return _context3.abrupt("return", dispatch(_fetchSchools(res.data)));
+
+              case 8:
+                _context3.prev = 8;
+                _context3.t0 = _context3["catch"](0);
+                console.error(_context3.t0);
+
+              case 11:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 8]]);
+      }));
+
+      return function (_x3) {
+        return _ref3.apply(this, arguments);
+      };
+    }()
+  );
+};
+var changeStudent = function changeStudent(schoolId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref4 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee4(dispatch) {
+        var res;
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put('/api/students', schoolId);
+
+              case 2:
+                res = _context4.sent;
+
+              case 3:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      return function (_x4) {
+        return _ref4.apply(this, arguments);
+      };
+    }()
+  );
 }; //reducers which are combined by combineReducers
 
 var schoolReducer = function schoolReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
+    case FETCH_SCHOOLS:
+      console.log("inside fetch schools case", _objectSpread({}, state, {
+        schoolsList: action.schools
+      }));
+      return _objectSpread({}, state, {
+        schoolsList: action.schools
+      });
+
     default:
       return state;
   }
 };
 
 var studentReducer = function studentReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case ADD_STUDENT:
-      //  console.log([...state, action.student ])
-      return [].concat(_toConsumableArray(state), [action.student]);
+      return _objectSpread({}, state, {
+        studentsList: [].concat(_toConsumableArray(state.studentsList), [action.student])
+      });
+
+    case FETCH_STUDENTS:
+      return _objectSpread({}, state, {
+        studentsList: action.students
+      });
+
+    case CHANGE_STUDENT:
+      {
+        var changedStudents = state.studentsList.map(function (student) {
+          if (student.firstName === action.student.firstName && student.lastName === action.student.lastName) {
+            student = action.student;
+          }
+
+          return student;
+        });
+        return _objectSpread({}, state, {
+          studentsList: changedStudents
+        });
+      }
 
     default:
       return state;
@@ -43620,10 +44275,8 @@ var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   schools: schoolReducer,
   students: studentReducer
 });
-var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(reducer, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"]));
-store.subscribe(function () {
-  return console.log(store.getState());
-});
+var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(reducer, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_3___default.a)); //store.subscribe(() => console.log(store.getState()));
+
 /* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),

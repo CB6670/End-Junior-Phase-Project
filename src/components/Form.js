@@ -1,71 +1,91 @@
-import React, {Component} from 'react';
-import store, {addStudent} from '../store/store';
+import React, { Component } from 'react';
+import { addStudent, fetchSchools } from '../store/store';
+import { connect } from "react-redux";
 
-export default class Form extends Component{
-    constructor(props){
+
+class Form extends Component {
+    constructor(props) {
         super(props);
         this.state = {
             firstName: '',
             lastName: '',
             email: '',
             GPA: 0,
-            school: ''
-         }
-         this.handleSubmit = this.handleSubmit.bind(this);
-         this.handleChange = this.handleChange.bind(this);
-    }
-    handleChange(ev){
-        const target = ev.target;
-        const value = target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value
-        })
-        //console.log(this.state);
+            school: 'Harvard',
+            loading: true
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleSubmit(ev){
-        ev.preventDefault();
-        const firstName = ev.target.firstName;
-        const lastName = ev.target.lastName;
-        const email = ev.target.lastName;
-        const GPA = ev.target.GPA;
-        const school = this.state.store.schools.filter( _school => {
-            if (school.name === ev.target.school){
-                return _school;
-            }
-        });
-        const schoolId = school.id;
-        //console.log(this.state.store);
-        store.dispatch(addStudent(firstName, lastName, email, GPA, schoolId));
-        this.setState({firstName: '', lastName: '', email: '', GPA: 0, school: ''});
+    async componentDidMount() {
+        await this.props.loadData();
+        //console.log("data", await this.props.loadData());
+        this.setState({loading: false});
     }
-    render(){
-        return(<form onSubmit = {this.handleSubmit}>
-<label>
-    first Name:
-    <input type = 'text' name = 'firstName' onChange = {this.handleChange} />
-</label>
-<label>
-    last Name:
-    <input type = 'text' name = 'lastName' onChange = {this.handleChange} />
-</label>
-<label>
-    Email:
-    <input type = 'email' name = 'email' onChange = {this.handleChange} />
-</label>
-<label>
-    GPA:
-    <input type = 'number' name = 'GPA' onChange = {this.handleChange} />
-</label>
-<select value={this.state.school} onChange={this.handleChange} name = "school">
-    <option defaultValue="Not Enrolled">Not Enrolled</option>
-    <option value="Harvard">Harvard</option>
-    <option value="Yale">Yale</option>
-    <option value="UCLA">UCLA</option>
-</select>
-<input type = "submit" value = "Submit" />
-</form>
+
+    handleChange(ev) {
+        this.setState({
+            [ev.target.name]: ev.target.value
+        })
+    }
+
+    async handleSubmit(ev) {
+        ev.preventDefault();
+        const dataObj = {};
+        dataObj.firstName = this.state.firstName;
+        dataObj.lastName = this.state.lastName;
+        dataObj.email = this.state.email;
+        dataObj.GPA = this.state.GPA;
+        await this.props.addStudentDispatch(dataObj);
+        this.setState({ firstName: '', lastName: '', email: '', GPA: 0, school: "Harvard" });
+    }
+    render() {
+        if(this.state.loading){
+            return <div></div>;
+        }
+        const { schools, students } = this.props;
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    first Name:
+        <input type='text' name='firstName' onChange={this.handleChange} value = {this.state.firstName} />
+                </label>
+                <label>
+                    last Name:
+        <input type='text' name='lastName' onChange={this.handleChange} value = {this.state.lastName} />
+                </label>
+                <label>
+                    Email:
+        <input type='email' name='email' onChange={this.handleChange} value = {this.state.email} />
+                </label>
+                <label>
+                    GPA:
+        <input type='number' name='GPA' onChange={this.handleChange} value = {this.state.GPA} />
+                </label>
+                <select value={this.state.value} onChange={this.handleChange} name="school" >
+                    {
+                        schools.schoolsList.map(school => (<option key = {school.id} value = {school.id}>{school.name}</option>))
+                    }
+                </select>
+                <input type="submit" value="Submit" />
+            </form>
         )
     }
 }
+
+const mapStateToProps = ({ schools, students }) => {
+    return {
+        schools,
+        students
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loadData: () => dispatch(fetchSchools()),
+        addStudentDispatch: (obj) => dispatch(addStudent(obj))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
