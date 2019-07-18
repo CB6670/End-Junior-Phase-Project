@@ -16,6 +16,8 @@ const FETCH_SCHOOLS = "FETCH_SCHOOLS";
 
 const FETCH_STUDENTS = "FETCH_STUDENTS";
 
+const FETCH_STUDENT = "FETCH_STUDENT";
+
 //action creators
 
 const _addStudent = (student) => (
@@ -38,10 +40,24 @@ const _fetchStudents = (students) => (
     }
 )
 
-const _changeStudent = (schoolId) => (
+const _changeStudent = (changedStudent) => (
     {
         type: CHANGE_STUDENT,
-        schoolId
+        changedStudent
+    }
+)
+
+const _fetchStudent = (studentId) => (
+    {
+        type: FETCH_STUDENT,
+        studentId
+    }
+)
+
+const _deleteStudent= (studentId) => (
+    {
+        type: DESTROY_STUDENT,
+        studentId
     }
 )
 
@@ -82,15 +98,35 @@ export const fetchSchools = () => {
     }
 }
 
-export const changeStudent = (schoolId) => {
+export const changeStudent = (schoolId, studentId) => {
     return async (dispatch) => {
-        const res = await axios.put('/api/students', schoolId)
+        console.log("schoolId",schoolId);
+        console.log("studentId", studentId);
+        const res = await axios.put(`/api/students/${studentId}`, {schoolId});
+        console.log("inside changeStudent",res.data);
+        dispatch(_changeStudent(res.data));
+    }
+}
+
+export const fetchStudent = (studentId) => {
+    return async (dispatch) => {
+        const res = await axios.get(`/api/students/${studentId}`);
+        return dispatch(_fetchStudent);
+    }
+}
+
+export const deleteStudent = (studentId) => {
+    console.log("inside deleteStudent thunk")
+    return async (dispatch) => {
+        const res = await axios.delete(`/api/students/${studentId}`, studentId);
+        console.log("response data:", res.data);
+        return dispatch(_deleteStudent(res.data));
     }
 }
 
 //reducers which are combined by combineReducers
 
-const schoolReducer = (state = {}, action) => {
+const schoolReducer = (state = {schoolsList: []}, action) => {
     switch (action.type) {
         case FETCH_SCHOOLS:
             console.log("inside fetch schools case", { ...state, schoolsList: action.schools })
@@ -100,7 +136,7 @@ const schoolReducer = (state = {}, action) => {
     }
 }
 
-const studentReducer = (state = {}, action) => {
+const studentReducer = (state = {studentsList: []}, action) => {
     switch (action.type) {
         case ADD_STUDENT:
             return { ...state, studentsList: [...state.studentsList, action.student] };
@@ -108,12 +144,20 @@ const studentReducer = (state = {}, action) => {
             return { ...state, studentsList: action.students }
         case CHANGE_STUDENT: {
             const changedStudents = state.studentsList.map(student => {
-                if (student.firstName === action.student.firstName && student.lastName === action.student.lastName) {
-                    student = action.student
+                if (student.id === action.changedStudent.id) {
+                    student = action.changedStudent
                 }
-                return student;
+                return {...state, studentsList: changedStudents};
             })
             return { ...state, studentsList: changedStudents }
+        }
+        case DESTROY_STUDENT: {
+            const newStudents = state.studentsList.filter(student => {
+                if (student.id !== action.studentId){
+                    return student;
+                }
+            })
+            return {...state, studentsList: newStudents}
         }
         default:
             return state

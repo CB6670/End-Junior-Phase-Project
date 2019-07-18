@@ -11,7 +11,7 @@ class Form extends Component {
             lastName: '',
             email: '',
             GPA: 0,
-            school: 'Harvard',
+            school: '',
             loading: true
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,6 +37,7 @@ class Form extends Component {
         dataObj.lastName = this.state.lastName;
         dataObj.email = this.state.email;
         dataObj.GPA = this.state.GPA;
+        dataObj.schoolId = this.state.school;
         await this.props.addStudentDispatch(dataObj);
         this.setState({ firstName: '', lastName: '', email: '', GPA: 0, school: "Harvard" });
     }
@@ -63,7 +64,7 @@ class Form extends Component {
                     GPA:
         <input type='number' name='GPA' onChange={this.handleChange} value = {this.state.GPA} />
                 </label>
-                <select value={this.state.value} onChange={this.handleChange} name="school" >
+                <select value={this.state.school} onChange={this.handleChange} name="school" >
                     {
                         schools.schoolsList.map(school => (<option key = {school.id} value = {school.id}>{school.name}</option>))
                     }

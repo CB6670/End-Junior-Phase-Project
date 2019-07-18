@@ -44,11 +44,12 @@ router.post('/api/students', async (req, res, next) => {
     }
 })
 
-router.put('/api/students', async (req, res, next) => {
+router.put('/api/students/:id', async (req, res, next) => {
     try {
-        res.send(await Student.update({
+        console.log("req's schoolId", req.body.schoolId)
+        res.send(await Student.update({schoolId: req.body.schoolId}, {
             where: {
-                id: req.body.id
+                id: req.params.id
             }
         }))
     } catch (err) {
@@ -56,13 +57,15 @@ router.put('/api/students', async (req, res, next) => {
     }
 })
 
-router.delete('/api/students', async (req, res, next) => {
+router.delete('/api/students/:id', async (req, res, next) => {
     try {
-        res.send(await Student.delete({
+        console.log(req.params)
+        await Student.destroy({
             where: {
-                id: req.body.id
+                id: req.params.id
             }
-        }))
+        })
+        res.send(req.params.id);
     } catch (err) {
         console.error(err);
     }
